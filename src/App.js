@@ -62,6 +62,19 @@ function App() {
         <Header title="My Todos List" searchBar={false} />
         <AddTodo addTodo={addTodo} />
         <Todos todos={todos} onDelete={onDelete} />
+
+        <Switch>
+          <Route exact path="/" render={() => {
+            return (
+              <>
+                <AddTodo addTodo={addTodo} />
+                <Todos todos={todos} onDelete={onDelete} />
+              </>)
+          }}>
+
+          </Route>
+        </Switch>
+
         <Footer />
       </Router>
     </>
